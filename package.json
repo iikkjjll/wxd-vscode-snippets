@@ -4,6 +4,11 @@
   "description": "All snippets for me.",
   "version": "0.0.1",
   "license": "MIT",
+  "icon": "./images/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iikkjjll/wxd-snippets"
+  },
   "scripts": {
     "build": "vsce package"
   },
@@ -17,7 +22,7 @@
     "snippets": [
       {
         "language": "html",
-        "path": "./snippets/javascript.json"
+        "path": "./snippets/html.json"
       },
       {
         "language": "css",
@@ -36,7 +41,7 @@
         "path": "./snippets/vue.json"
       },
       {
-        "language": "vue-html",
+        "language": "html",
         "path": "./snippets/vue-html.json"
       },
       {
