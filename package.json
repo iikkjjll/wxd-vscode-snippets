@@ -1,13 +1,14 @@
 {
-  "name": "wxd-snippets",
-  "displayName": "wxd-snippets",
-  "description": "All snippets for me.",
-  "version": "0.0.1",
+  "name": "wxd-vscode-snippets",
+  "displayName": "wxd-vscode-snippets",
+  "description": "All snippets for myself.",
+  "version": "0.0.3",
   "license": "MIT",
   "icon": "./images/logo.png",
+  "publisher": "wxd",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iikkjjll/wxd-snippets"
+    "url": "https://github.com/iikkjjll/wxd-vscode-snippets"
   },
   "scripts": {
     "build": "vsce package"
