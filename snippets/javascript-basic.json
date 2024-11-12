@@ -1,0 +1,245 @@
+{
+    "用IDEA中的sout来打印输出语句": {
+        "prefix": "sout",
+        "body": [
+            "console.log(\"$1\");$0"
+        ],
+        "description": "用IDEA中的sout来打印输出语句。"
+    },
+    "简化打印函数的输入": {
+        "prefix": "clg",
+        "body": [
+            "console.log(${1:variable});$0"
+        ],
+        "description": "简化打印函数的输入"
+    },
+    "专门用于打印变量或者对象": {
+        "prefix": "soutv",
+        "body": [
+            "console.log(\"${1:vname} = \" + $1);$0"
+        ],
+        "description": "专门用于打印变量或者对象，vname就是variable_name，即变量名的意思。需要在设置中开启在strings中自动展开quick suggestion选项。"
+    },
+    "简化箭头函数的输出": {
+        "prefix": "jt",
+        "body": [
+            "($1) => {",
+            "    $0",
+            "}"
+        ],
+        "description": "简化箭头函数的输入。"
+    },
+    "定义带名称的函数": {
+        "prefix": "nm",
+        "body": [
+            "function ${1:fname}() {",
+            "    $0",
+            "};"
+        ],
+        "description": "定义带名称的函数。删掉名称就可以当做匿名函数。"
+    },
+    "用const来声明一个匿名函数": {
+        "prefix": "fn",
+        "body": [
+            "const ${1:name} = function () {",
+            "    $0",
+            "};"
+        ],
+        "description": "用const来声明一个匿名函数。"
+    },
+    "if语句": {
+        "prefix": "if",
+        "body": [
+            "if (${1:condition}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "if语句"
+    },
+    "if-else语句": {
+        "prefix": "ife",
+        "body": [
+            "if (${1:condition}) {",
+            "    $0",
+            "} else {",
+            "    ",
+            "}"
+        ],
+        "description": "if-else语句"
+    },
+    "if, else if, else语句": {
+        "prefix": "ifif",
+        "body": [
+            "if (${1:condition}) {",
+            "    $0",
+            "} else if (condition) {",
+            "    ",
+            "} else {",
+            "    ",
+            "}"
+        ],
+        "description": "if, else if, else语句"
+    },
+    "简化普通 for 循环的输入": {
+        "prefix": "fori",
+        "body": [
+            "for (let i = 0; i < $1; i++) {",
+            "    $0",
+            "}"
+        ],
+        "description": "简化普通 for 循环的输入"
+    },
+    "数组专用的For Each循环": {
+        "prefix": "fe",
+        "body": [
+            "arr${1:0}.forEach((item) => {",
+            "    // console.log(item);$0",
+            "});"
+        ],
+        "description": "数组专用的For Each循环，不能用于对象和类数组。从数组中遍历出来的每一个元素都会执行回调函数。"
+    },
+    "简化 for...in 语句的输入": {
+        "prefix": "fin",
+        "body": [
+            "for (const key in ${1:object}) {",
+            "   $0",
+            "}"
+        ],
+        "description": "简化 for...in 语句的输入，用于遍历对象上的可枚举属性，得到的是key，而不是value。虽然可以用于遍历数组，但不推荐，因为 for...in 会枚举数组上所有的属性的key，包括原型链上的属性。"
+    },
+    "简化 for...of 语句的输入": {
+        "prefix": "fof",
+        "body": [
+            "for (const value of ${1:object}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "简化 for...of 语句的输入。for...of是ES6中引入的新特性，用于遍历可迭代对象(数组、字符串、Map、Set)。for...of 得到的是属性的value，且不会遍历原型链上的属性值。因普通对象并不是可迭代对象，所以不能用于普通对象。"
+    },
+    "简化while语句的输入": {
+        "prefix": "while",
+        "body": [
+            "while (${1:condition}) {",
+            "    $0",
+            "}"
+        ],
+        "description": "简化while语句的输入"
+    },
+    "简化do while语句的输入": {
+        "prefix": "dowhile",
+        "body": [
+            "do {",
+            "    $0",
+            "} while (${1:condition});"
+        ],
+        "description": "简化do while语句的输入"
+    },
+    "简化 while 无限循环的输入": {
+        "prefix": "while_true",
+        "body": [
+            "while (true) {",
+            "    $0",
+            "    // 跳出循环",
+            "    if (${1:condition}) {",
+            "        break;",
+            "    }",
+            "}"
+        ],
+        "description": "简化 while 无限循环的输入"
+    },
+    "声明一个普通字符串": {
+        "prefix": "strr",
+        "body": [
+            "const ${1:str} = '${2:string}';$0"
+        ],
+        "description": "用const来声明一个字符串。"
+    },
+    "声明一个带索引的字符串变量": {
+        "prefix": "stri",
+        "body": [
+            "const str${1:0} = '${2:string}';$0"
+        ],
+        "description": "用const来声明一个带有数字后缀的字符串变量。"
+    },
+    "专用于测试的对象": {
+        "prefix": "obj_test",
+        "body": [
+            "const obj = {",
+            "    name: \"root\",",
+            "    age: 18,",
+            "    gender: \"female\",",
+            "    hobbies: [\"reading\", \"jogging\", \"sing\"],",
+            "    address: \"Beijing\",",
+            "    country: \"China\"",
+            "};",
+            "$0"
+        ],
+        "description": "用const来声明一个专用于测试的对象。"
+    },
+    "用const来声明一个空对象": {
+        "prefix": "objj",
+        "body": [
+            "const ${1:obj} = {",
+            "    \"${2:name}\": \"${3:root}\",",
+            "    $0",
+            "};"
+        ],
+        "description": "用const来声明一个空对象。"
+    },
+    "临时测试的数值类型数组": {
+        "prefix": "arr_test_1",
+        "body": [
+            "const arr${1:0} = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];$0"
+        ],
+        "description": "用const来声明一个专用于临时测试的数组。这里使用1到10，共计10个数字。"
+    },
+    "临时测试的字符串数组": {
+        "prefix": "arr_test_a",
+        "body": [
+            "const arr${1:0} = [\"aaa\", \"bbb\", \"ccc\", \"ddd\", \"eee\", \"fff\", \"ggg\"];$0"
+        ],
+        "description": "用const来声明一个专用于临时测试的字符串类型数组。这里使用aaa到ggg，共计7个字符串。"
+    },
+    "用const来声明一个空数组": {
+        "prefix": "arrr",
+        "body": [
+            "const ${1:arr} = [];$0"
+        ],
+        "description": "用const来声明一个数组。"
+    },
+    "定时器": {
+        "prefix": "st",
+        "body": [
+            "setTimeout(() => {",
+            "    $0",
+            "}, 1000);"
+        ],
+        "description": "定时器，默认 1000ms 后执行回调函数。"
+    },
+    "计时器": {
+        "prefix": "si",
+        "body": [
+            "const timer = setInterval(() => {",
+            "    $0",
+            "    if (condition) {",
+            "        clearInterval(timer);",
+            "    }",
+            "}, 1000);"
+        ],
+        "description": "计时器，默认每 1000ms 执行一次回调函数。"
+    },
+    "一段时间后开启一个计时器": {
+        "prefix": "sti",
+        "body": [
+            "setTimeout(() => {",
+            "    const timer = setInterval(() => {",
+            "        $0",
+            "        if (condition) {",
+            "            clearInterval(timer);",
+            "        }",
+            "    }, 1000);",
+            "}, 1000);"
+        ],
+        "description": "在规定一段时间后开启一个计时器。"
+    }
+}

@@ -1,6 +1,6 @@
 {
-  "name": "wxd-vscode-snippets",
-  "displayName": "wxd-vscode-snippets",
+  "name": "aaa-wxd-vscode-snippets",
+  "displayName": "aaa-wxd-vscode-snippets",
   "description": "All snippets for myself.",
   "version": "0.0.3",
   "license": "MIT",
@@ -31,7 +31,11 @@
       },
       {
         "language": "javascript",
-        "path": "./snippets/javascript.json"
+        "path": "./snippets/javascript-basic.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript-extend.json"
       },
       {
         "language": "typescript",

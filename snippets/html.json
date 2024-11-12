@@ -25,5 +25,65 @@
             "</html>"
         ],
         "description": "新手学习前端专用HTML结构。且自动去掉文件名中的后缀。"
+    },
+    "在html中用 module 的方式使用vue.js": {
+        "prefix": "hv_module",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
+            "    <style>",
+            "        body {",
+            "            margin: 0;",
+            "        }",
+            "",
+            "        ",
+            "    </style>",
+            "</head>",
+            "<body>",
+            "    <div id=\"app\">",
+            "        $0",
+            "    </div>",
+            "    <script type=\"module\">",
+            "        import { ${2:ref} } from \"${1:module}\";",
+            "        ",
+            "    </script>",
+            "</body>",
+            "</html>"
+        ],
+        "description": "在html中用 module 的方式使用vue.js。这是使用ES模块导入的方式。用到的vue的文件名是：vue.esm-browser.js。"
+    },
+    "在html中用全局引入的方式使用vue.js": {
+        "prefix": "hv_global",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
+            "    <script src=\"${1:vue.global.js的路径}\"></script>",
+            "    <style>",
+            "        body {",
+            "            margin: 0;",
+            "        }",
+            "",
+            "        ",
+            "    </style>",
+            "</head>",
+            "<body>",
+            "    <div id=\"app\">",
+            "        $0",
+            "    </div>",
+            "    <script>",
+            "        ",
+            "    </script>",
+            "</body>",
+            "</html>"
+        ],
+        "description": "在html中用全局引入的方式使用vue.js，这里导入的文件名是：vue.global.js。"
     }
 }

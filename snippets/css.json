@@ -1,0 +1,19 @@
+{
+    "登录页模糊效果": {
+        "prefix": "d_blur",
+        "body": [
+            "background-color: rgba(255, 255, 255, 0.5);",
+            "backdrop-filter: blur(5px);"
+        ],
+        "description": "登录页模糊效果的关键两行代码，加在登录框的父盒子上。"
+    },
+    "flex水平垂直居中": {
+        "prefix": "f_center",
+        "body": [
+            "display: flex;",
+            "justify-content: center;",
+            "align-items: center;"
+        ],
+        "description": "flex水平垂直居中的关键代码。"
+    }
+}

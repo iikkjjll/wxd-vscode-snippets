@@ -1,0 +1,95 @@
+{
+    "给按钮添加监听事件": {
+        "prefix": "bal",
+        "body": [
+            "mybtn${1:0}.addEventListener(\"${2:click}\", (event) => {",
+            "    event.stopPropagation();",
+            "    event.preventDefault();",
+            "    $0",
+            "}, false);"
+        ],
+        "description": "专门用于给按钮 mybtn 添加监听事件。并且，预留了增加序号的需求。"
+    },
+    "给整个文档添加监听事件": {
+        "prefix": "dal",
+        "body": [
+            "document.addEventListener(\"${1:click}\", (event) => {",
+            "    event.stopPropagation();",
+            "    event.preventDefault();",
+            "    $0",
+            "}, false);"
+        ],
+        "description": "给整个 document 添加监听事件。"
+    },
+    "生成随机颜色值的功能函数": {
+        "prefix": "random_color",
+        "body": [
+            "function getRandomHexColor() {",
+            "    let letters = \"0123456789ABCDEF\";",
+            "    let color = \"#\";",
+            "    for (let i = 0; i < 6; i++) {",
+            "        color += letters[Math.floor(Math.random() * 16)];",
+            "    }",
+            "    return color;",
+            "}",
+            "",
+            "// 调用生成随机颜色值的函数",
+            "let randomHexColor = getRandomHexColor();",
+            "console.log(\"randomHexColor = \" + randomHexColor);"
+        ],
+        "description": "生成十六进制的随机颜色值的功能函数。"
+    },
+    "生成随机数的功能函数": {
+        "prefix": "sjs",
+        "body": [
+            "const generateRandomNumbers = function (count, max=100, min=1) {",
+            "    if (count <= 0 || count === null || count === undefined) {",
+            "        return null;",
+            "    }",
+            "    let randomNumbers = [];",
+            "    for (let i = 0; i < count; i++) {",
+            "        let randomNumber = Math.floor(Math.random() * max) + min;",
+            "        randomNumbers.push(randomNumber);",
+            "    }",
+            "    return randomNumbers;",
+            "};",
+            "",
+            "// 生成随机数",
+            "let generateNumbers = generateRandomNumbers(10);",
+            "console.log(generateNumbers);"
+        ],
+        "description": "生成随机数的功能函数。"
+    },
+    "计算某个函数的运行时间的功能函数": {
+        "prefix": "ctime_fn",
+        "body": [
+            "const runTime = calcRunTime(callback);",
+            "$0",
+            "",
+            "function calcRunTime(callback){",
+            "    let startTime = Date.now();",
+            "    callback();",
+            "    let endTime = Date.now();",
+            "    let runTime = endTime - startTime;",
+            "    return runTime;",
+            "}"
+        ],
+        "description": "计算某个函数的运行时间的功能函数。定义是放在后面的，这个callback也可以是一个回调函数。"
+    },
+    "计算某段程序的运行时间的框架": {
+        "prefix": "ctime",
+        "body": [
+            "let startTime = Date.now();",
+            "",
+            "// 这里是要测试的代码",
+            "for(let i = 0; i < 10000; i++) {",
+            "    console.log(Math.random());",
+            "}",
+            "$0",
+            "let endTime = Date.now();",
+            "let runTime = endTime - startTime;",
+            "console.log(\"程序运行耗时为：\" + runTime +\" 毫秒！\");"
+        ],
+        "description": "计算某段程序的运行时间的框架。"
+    }
+}
