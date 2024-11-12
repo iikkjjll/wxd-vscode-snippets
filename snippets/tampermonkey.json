@@ -1,0 +1,24 @@
+{
+    "油猴脚本": {
+        "prefix": "tm_tm",
+        "body": [
+            "// ==UserScript==",
+            "// @name         $1",
+            "// @namespace    http://tampermonkey.net/",
+            "// @version      $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE ",
+            "// @description  $1",
+            "// @author       王某人",
+            "// @match        *://$2/*",
+            "// @icon         https://www.google.com/s2/favicons?sz=64&domain=${2:网址的域名}",
+            "// @run-at       document-end",
+            "// @grant        none",
+            "// ==/UserScript==",
+            "",
+            "(function() {",
+            "    'use strict';",
+            "    $0",
+            "})();"
+        ],
+        "description": "油猴脚本"
+    }
+}

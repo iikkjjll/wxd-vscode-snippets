@@ -3,6 +3,10 @@
   "displayName": "wxd-snippets",
   "description": "All snippets for me.",
   "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "vsce package"
+  },
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -12,8 +16,40 @@
   "contributes": {
     "snippets": [
       {
+        "language": "html",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/css.json"
+      },
+      {
         "language": "javascript",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/vue-html.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/tampermonkey.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/jquery.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
       }
     ]
   }

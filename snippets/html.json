@@ -1,0 +1,29 @@
+{
+    "新手学习前端专用HTML结构": {
+        "prefix": "!!",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
+            "    <style>",
+            "        body {",
+            "            margin: 0;",
+            "        }",
+            "",
+            "        ",
+            "    </style>",
+            "</head>",
+            "<body>",
+            "    $0",
+            "    <script>",
+            "        ",
+            "    </script>",
+            "</body>",
+            "</html>"
+        ],
+        "description": "新手学习前端专用HTML结构。且自动去掉文件名中的后缀。"
+    }
+}
