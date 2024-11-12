@@ -1,0 +1,20 @@
+{
+  "name": "wxd-snippets",
+  "displayName": "wxd-snippets",
+  "description": "All snippets for me.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
