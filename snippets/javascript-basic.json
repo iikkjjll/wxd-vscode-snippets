@@ -2,21 +2,21 @@
     "用IDEA中的sout来打印输出语句": {
         "prefix": "sout",
         "body": [
-            "console.log(\"$1\");$0"
+            "console.log($1);$0"
         ],
         "description": "用IDEA中的sout来打印输出语句。"
     },
     "简化打印函数的输入": {
         "prefix": "clg",
         "body": [
-            "console.log(${1:variable});$0"
+            "console.log(\"$1\");$0"
         ],
-        "description": "简化打印函数的输入"
+        "description": "简化打印函数的输入，专用于打印字符串。"
     },
     "专门用于打印变量或者对象": {
         "prefix": "soutv",
         "body": [
-            "console.log(\"${1:vname} = \" + $1);$0"
+            "console.log(\"${1:vname} = \", $1);$0"
         ],
         "description": "专门用于打印变量或者对象，vname就是variable_name，即变量名的意思。需要在设置中开启在strings中自动展开quick suggestion选项。"
     },
