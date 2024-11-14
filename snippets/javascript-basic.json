@@ -241,5 +241,16 @@
             "}, 1000);"
         ],
         "description": "在规定一段时间后开启一个计时器。"
+    },
+    "简化文档注释的输入": {
+        "prefix": "wd",
+        "body": [
+            "/**",
+            " * @description ${1:description}",
+            " * @param ",
+            " * @returns ",
+            " */"
+        ],
+        "description": "简化文档注释的输入。"
     }
 }
