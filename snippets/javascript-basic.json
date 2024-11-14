@@ -20,6 +20,13 @@
         ],
         "description": "专门用于打印变量或者对象，vname就是variable_name，即变量名的意思。需要在设置中开启在strings中自动展开quick suggestion选项。"
     },
+    "简化打印分割线的输入": {
+        "prefix": ["soutf", "hr"],
+        "body": [
+            "console.log('==================================================');"
+        ],
+        "description": "简化打印分割线的输入"
+    },
     "简化箭头函数的输出": {
         "prefix": "jt",
         "body": [
