@@ -85,5 +85,19 @@
             "</html>"
         ],
         "description": "在html中用全局引入的方式使用vue.js，这里导入的文件名是：vue.global.js。"
+    },
+    "简化script为javascript的输入": {
+        "prefix": "scrjs",
+        "body": [
+            "<script type=\"text/javascript\" src=\"${1:src}\"></script>"
+        ],
+        "description": "简化 script 标签的type属性的值为 text/javascript 的输入。也就是引入普通的javascript代码。"
+    },
+    "简化script为module的输入": {
+        "prefix": "scres",
+        "body": [
+            "<script type=\"module\" src=\"${1:src}\"></script>"
+        ],
+        "description": "简化 script 标签的type属性的值为module的输入。也就是用于 ES6 的模块化引入。"
     }
 }
