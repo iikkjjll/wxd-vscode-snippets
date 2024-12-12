@@ -1,103 +1,37 @@
 {
     "新手学习前端专用HTML结构": {
         "prefix": "!!",
-        "body": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head>",
-            "    <meta charset=\"UTF-8\">",
-            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
-            "    <style>",
-            "        body {",
-            "            margin: 0;",
-            "        }",
-            "",
-            "        ",
-            "    </style>",
-            "</head>",
-            "<body>",
-            "    $0",
-            "    <script>",
-            "        ",
-            "    </script>",
-            "</body>",
-            "</html>"
-        ],
+        "body": ["<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title>${TM_FILENAME/(.*).html/$1/}</title>\n\t<style></style>\n</head>\n\n<body>\n\t<script>$0</script>\n</body>\n\n</html>"],
         "description": "新手学习前端专用HTML结构。且自动去掉文件名中的后缀。"
     },
     "在html中用 module 的方式使用vue.js": {
         "prefix": "hv_module",
-        "body": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head>",
-            "    <meta charset=\"UTF-8\">",
-            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
-            "    <style>",
-            "        body {",
-            "            margin: 0;",
-            "        }",
-            "",
-            "        ",
-            "    </style>",
-            "</head>",
-            "<body>",
-            "    <div id=\"app\">",
-            "        $0",
-            "    </div>",
-            "    <script type=\"module\">",
-            "        import { ${2:ref} } from \"${1:module}\";",
-            "        ",
-            "    </script>",
-            "</body>",
-            "</html>"
-        ],
+        "body": ["<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title>${TM_FILENAME/(.*).html/$1/}</title>\n\t<style></style>\n</head>\n\n<body>\n\t<div id=\"app\"></div>\n\t<script type=\"module\">\n\t\timport { ${2:ref} } from \"module\";\n\t\t$0\n\t</script>\n</body>\n\n</html>"],
         "description": "在html中用 module 的方式使用vue.js。这是使用ES模块导入的方式。用到的vue的文件名是：vue.esm-browser.js。"
     },
     "在html中用全局引入的方式使用vue.js": {
         "prefix": "hv_global",
-        "body": [
-            "<!DOCTYPE html>",
-            "<html lang=\"en\">",
-            "<head>",
-            "    <meta charset=\"UTF-8\">",
-            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-            "    <title>${TM_FILENAME/(.*).html/$1/}</title>",
-            "    <script src=\"${1:vue.global.js的路径}\"></script>",
-            "    <style>",
-            "        body {",
-            "            margin: 0;",
-            "        }",
-            "",
-            "        ",
-            "    </style>",
-            "</head>",
-            "<body>",
-            "    <div id=\"app\">",
-            "        $0",
-            "    </div>",
-            "    <script>",
-            "        ",
-            "    </script>",
-            "</body>",
-            "</html>"
-        ],
+        "body": ["<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<title>${TM_FILENAME/(.*).html/$1/}</title>\n\t<script src=\"${1:vue.global.js的路径}\"></script>\n\t<style></style>\n</head>\n\n<body>\n\t<div id=\"app\"></div>\n\t<script>\n\t\t$0\n\t</script>\n</body>\n\n</html>"],
         "description": "在html中用全局引入的方式使用vue.js，这里导入的文件名是：vue.global.js。"
     },
     "简化script为javascript的输入": {
-        "prefix": "scrjs",
-        "body": [
-            "<script type=\"text/javascript\" src=\"${1:src}\"></script>"
-        ],
+        "prefix": ["sjs", "scrjs"],
+        "body": ["<script type=\"text/javascript\" src=\"${1:src}\"></script>"],
         "description": "简化 script 标签的type属性的值为 text/javascript 的输入。也就是引入普通的javascript代码。"
     },
     "简化script为module的输入": {
         "prefix": "scres",
-        "body": [
-            "<script type=\"module\" src=\"${1:src}\"></script>"
-        ],
+        "body": ["<script type=\"module\" src=\"${1:src}\"></script>"],
         "description": "简化 script 标签的type属性的值为module的输入。也就是用于 ES6 的模块化引入。"
+    },
+    "空的script标签": {
+        "prefix": "script_empty",
+        "body": ["<script>\n\t$0\n</script>"],
+        "description": "空的script标签，也就是一个内联脚本。脚本中的内容会直接运行。"
+    },
+    "带参数不全的script标签": {
+        "prefix": "script_full",
+        "body": ["<script type=\"${1|text/javascript, module, importmap|}\" scr=\"$2\" ${3|defer,async|}></script>"],
+        "description": "带参数不全的script标签。"
     }
 }
